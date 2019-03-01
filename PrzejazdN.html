@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Dawid Gorski N</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <script>
+            function walidacja() {
+         
+             
+                 if( (document.getElementById("liczbapazerow").value <=0 )||(document.getElementById("liczbapazerow").value >50 )) {
+                    document.getElementById("error").innerHTML = "Proszę wprowadzić poprawną liczbę pasażerów od 1 do 50!";
+                    return false;
+                }
+                
+                return true;
+            }
+        </script>
+    </head>
+
+    <body BGCOLOR="orange">
+        
+        <h1>Przewóz osób</h1>
+         <form action="/UslugiPrzewozoweN" method="GET">
+        <b>Środek transportu</b>
+        <br/><input type="radio" name="srodek" id="taksi" value="1" checked/>
+        taksówka
+        <br/><input type="radio" name="srodek" id="mini" value="0.5" />
+        minibus
+        <br/><input type="radio" name="srodek" id="auto" value="0.1"/>
+        autokar<p>
+        
+        <b>Liczba pasażerów wsiadających</b><br/>
+        <input type="text" name="liczbapasazerow" id="liczbapazerow" value="0"/><p>
+       <b>Odległość</b><br/>
+        <select name="odleglosc">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+        </select>
+        <p/>
+            <input type="checkbox" id="nocna" name="taryfa"/> Taryfa nocna<p>
+        <input type="reset"/>
+            <input type="submit" onclick=" return walidacja()"/>
+               <p id="error" style="color: red"/>
+               </form>
+    </body>
+</html>
